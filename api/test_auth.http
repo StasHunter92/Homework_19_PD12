@@ -1,0 +1,43 @@
+# Check authorization is successful, 201
+POST http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Administrator",
+  "password": "Administrator"
+}
+###
+
+POST http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "User",
+  "password": "User"
+}
+###
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Check authorization error User not found, 404
+POST http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Administrator1",
+  "password": "Administrator"
+}
+###
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Check authorization error Password is wrong, 400
+POST http://127.0.0.1:5000/auth/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Administrator",
+  "password": "Administrator1"
+}

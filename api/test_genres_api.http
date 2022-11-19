@@ -1,0 +1,61 @@
+# Check genres view successful, 200
+GET http://127.0.0.1:5000/genres/
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+###
+
+GET http://127.0.0.1:5000/genres/1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+###
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Check User access denied
+POST http://127.0.0.1:5000/genres/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+
+{
+  "name": "Genre"
+}
+###
+
+PUT http://127.0.0.1:5000/genres/18
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+
+{
+  "name": "PutTestGenre"
+}
+###
+
+DELETE http://127.0.0.1:5000/genres/18
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+###
+
+#-----------------------------------------------------------------------------------------------------------------------
+# Check Administrator access successful
+POST http://127.0.0.1:5000/genres/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+
+{
+  "name": "Genre"
+}
+###
+
+PUT http://127.0.0.1:5000/genres/19
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+
+{
+  "name": "PutTestGenre"
+}
+###
+
+DELETE http://127.0.0.1:5000/genres/19
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w

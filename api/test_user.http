@@ -1,0 +1,97 @@
+# Create a new users
+POST http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Administrator",
+  "password": "Administrator",
+  "role": "admin"
+}
+
+###
+POST http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "User",
+  "password": "User",
+  "role": "user"
+}
+
+###
+POST http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+  "username": "Test",
+  "password": "Test",
+  "role": "user"
+}
+
+###
+#-----------------------------------------------------------------------------------------------------------------------
+# Check Administrator get successful. 200
+GET http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+
+###
+# Check Administrator get successful. 200
+GET http://127.0.0.1:5000/users/3
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+
+###
+# Check Administrator update successful. 204
+PUT http://127.0.0.1:5000/users/3
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+
+{
+  "username": "PutTestUsername",
+  "password": "PutTestPassword"
+}
+
+###
+# Check Administrator delete successful. 204
+DELETE http://127.0.0.1:5000/users/3
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkFkbWluaXN0cmF0b3IiLCJyb2xlIjoiYWRtaW4iLCJleHBpcmVzIjoxNjc2NjQ3NzE0fQ.cpLMg1mihKQXkVFAtdpmdqFIWK6jlQplXJCppAbqb2w
+###
+
+# ----------------------------------------------------------------------------------------------------------------------
+# Check User access denied, 403
+GET http://127.0.0.1:5000/users/
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+###
+
+GET http://127.0.0.1:5000/users/2
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+###
+
+PUT http://127.0.0.1:5000/users/2
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
+
+{
+  "username": "PutTestUsername",
+  "password": "PutTestPassword"
+}
+###
+
+DELETE http://127.0.0.1:5000/users/2
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIiLCJyb2xlIjoidXNlciIsImV4cGlyZXMiOjE2NzY2NDc3MTV9._iE5MIQC_Coj0BMuloGH2Pj2NJnPtsF66gggflU6900
